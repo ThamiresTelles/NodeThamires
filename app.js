@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req,res) => {
-    res.send('Olá, Thamires');
+    res.send('Olá, Thamires que deveria se chamar Josemires');
 });
 
 app.get("/josemires", (req,res) => {
@@ -18,7 +18,8 @@ app.post("/josemires", (req,res) => {
     console.log(typeof req.body.idade);
     res.send(`Olá, ${req.body.nome} ${req.body.sobrenome} de altura ${req.body.altura}m e na idade ${req.body.idade}`);
 });
+const PORT = process.env.PORT || 8080;
 
-app.listen(8080,() => {
-    console.log("Servido iniciado na porta 8080: http://localhost:8080/");
+app.listen(PORT,() => {
+    console.log(`Servido iniciado na porta ${PORT}: http://localhost:${PORT}/`);
 });
