@@ -1,11 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
+app.options("*", cors());
 
 app.get("/", (req,res) => {
-    res.send('Olá, Thamires que deveria se chamar Josemires');
+    res.json({ mensagem: 'Olá, Thamires que deveria se chamar Josemires bla bla bla' });
 });
 
 app.get("/josemires", (req,res) => {
