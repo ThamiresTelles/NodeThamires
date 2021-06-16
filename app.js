@@ -8,7 +8,7 @@ app.use(cors());
 app.options("*", cors());
 
 app.get("/", (req,res) => {
-    res.json({ mensagem: 'Olá, Thamires que deveria se chamar Josemires bla bla bla' });
+    res.json({ mensagem: 'Olá, Thamires que deveria se chamar Josemires' });
 });
 
 app.get("/josemires", (req,res) => {
