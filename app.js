@@ -12,14 +12,12 @@ app.get("/", (req,res) => {
 });
 
 app.get("/josemires", (req,res) => {
-    res.send('Olá, josemires');
+    res.json({mensagem: 'Olá, josemires'});
 });
 
 app.post("/josemires", (req,res) => {
-    console.log(req.body);
-    console.log(typeof req.body.altura);
-    console.log(typeof req.body.idade);
-    res.send(`Olá, ${req.body.nome} ${req.body.sobrenome} de altura ${req.body.altura}m e na idade ${req.body.idade}`);
+   
+    res.json({mensagem: `Olá, ${req.body.nome} ${req.body.sobrenome} de altura ${req.body.altura}m e na idade ${req.body.idade}. Filho da ${req.body.filiacao.mae} e do ${req.body.filiacao.pai}`});
 });
 const PORT = process.env.PORT || 8080;
 
